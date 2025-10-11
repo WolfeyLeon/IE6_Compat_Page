@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Torque | Creator Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background: linear-gradient(135deg, #006aff 0%, #223366 60%, #102040 100%);
+            margin: 0;
+            font-family: 'Segoe UI', 'Tahoma', 'Geneva', sans-serif;
+            color: #fff;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 32px auto; /* Add top/bottom margin for spacing */
+            background: rgba(34,51,102,0.6); /* Lower opacity for gradient visibility */
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+            margin-top: 40px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            gap: 24px; /* Add gap for spacing */
+        }
+        .intro {
+            max-width: 60%;
+            min-width: 260px;
+        }
+        .intro h1 {
+            font-size: 2.2rem;
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+        .intro p {
+            font-size: 1.1rem;
+            margin: 0 0 24px 0;
+        }
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+        .social-icons a {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #3161a3;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 32px;
+            color: #fff;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .social-icons a:hover {
+            background: #223366;
+        }
+        .avatar {
+            width: 140px;
+            height: 140px;
+            background: #3161a3;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 16px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        .about {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .about-img {
+            width: 120px;
+            height: 120px;
+            background: #3161a3;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            flex-shrink: 0;
+        }
+        .about-details {
+            flex: 1;
+            min-width: 200px;
+        }
+        .about-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+        }
+        .about-details li {
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+        .portfolio-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+        .portfolio-tabs button {
+            background: #3161a3;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: #fff;
+            transition: background 0.2s;
+        }
+        .portfolio-tabs button:hover,
+        .portfolio-tabs button.active {
+            background: #223366;
+            color: #fff;
+        }
+        .portfolio-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-bottom: 12px;
+            justify-content: center;
+        }
+        .portfolio-entry {
+            width: 160px;
+            min-width: 120px;
+        }
+        .portfolio-item {
+            width: 100%;
+            height: 110px;
+            background: #3161a3;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .portfolio-caption {
+            height: 16px;
+            background: #223366;
+            border-radius: 4px;
+            margin-top: 6px;
+            width: 80%;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+        .gallery-link {
+            text-align: right;
+            font-size: 1rem;
+            color: #b0c4de;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .character-section {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .character-img {
+            width: 120px;
+            height: 120px;
+            background: #3161a3;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        .character-details {
+            flex: 1;
+            min-width: 200px;
+        }
+        .projects-section {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .project-card {
+            flex: 1 1 220px;
+            background: #3161a3;
+            border-radius: 12px;
+            padding: 18px;
+            min-height: 120px;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .portfolio-item img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+        }
+        @media (max-width: 900px) {
+            .container { padding: 16px 4px; }
+            header { flex-direction: column; gap: 24px; }
+            .intro { max-width: 100%; }
+            .about, .character-section, .projects-section { flex-direction: column; gap: 18px; }
+            .avatar { margin-top: 0; }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 8px 16px;
+                margin: 16px; /* Add margin on mobile too */
+                border-radius: 16px;
+                background: rgba(34,51,102,0.6); /* Lower opacity for gradient visibility */
+            }
+            header {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .intro {
+                max-width: calc(100% - 100px); /* Leave space for avatar */
+                min-width: 0;
+                flex: 1 1 0;
+            }
+            .avatar {
+                margin-top: 0;
+                width: 80px;
+                height: 80px;
+                flex-shrink: 0;
+            }
+            .intro h1 {
+                font-size: 1.3rem;
+            }
+            h2 {
+                font-size: 1.1rem;
+            }
+            .portfolio-entry {
+                width: 100%;
+                min-width: 0;
+            }
+            .portfolio-gallery {
+                gap: 10px;
+            }
+            .about-img, .character-img, .avatar {
+                width: 80px;
+                height: 80px;
+            }
+            .project-card {
+                padding: 10px;
+                min-height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="intro">
+                <h1>Hey, I'm Torque</h1>
+                <p>a content creator who mixes cars, trucks & furry creativity.</p>
+                <div class="social-icons">
+                    <a href="#" title="Twitch">🎮</a>
+                    <a href="#" title="YouTube">▶️</a>
+                    <a href="#" title="Twitter">🐦</a>
+                    <a href="#" title="Discord">💬</a>
+                    <a href="#" title="Download">⬇️</a>
+                    <a href="#" title="Other">⚙️</a>
+                </div>
+            </div>
+            <div class="avatar">
+                <!-- Replace with actual avatar image -->
+                <img src="https://placehold.co/140x140?text=Avatar" alt="Torque Avatar" style="width:100%;height:100%;">
+            </div>
+        </header>
+        <section>
+            <h2>About Me</h2>
+            <div class="about">
+                <div class="about-img">
+                    <img src="https://placehold.co/120x120?text=Photo" alt="About Me" style="width:100%;height:100%;">
+                </div>
+                <div class="about-details">
+                    <p>Lorem ayaone breau enfives we js-servids<br>
+                    Pettem orcita maoehvn otso dit torhstirty quastolicvanto vjoch, exrik oragehahit patisnoes neci du avusumta znrd. ptram.dikolok.</p>
+                    <ul>
+                        <li>🚗 <b>Favorite car:</b> Nissan Skyline GT R R34</li>
+                        <li>🦊 <b>Character:</b> [Name]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Portfolio</h2>
+            <div class="portfolio-tabs">
+                <button data-filter="all" class="active">Videos & Streams</button>
+                <button data-filter="cars">Cans & Trucks</button>
+                <button data-filter="art">Character & Art</button>
+            </div>
+            <div class="portfolio-gallery">
+                <div class="portfolio-entry" data-category="videos">
+                    <a href="https://youtube.com/" target="_blank">
+                        <div class="portfolio-item">
+                            <img src="https://placehold.co/160x110?text=Video" alt="Video Example">
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">Stream Highlight</div>
+                </div>
+                <div class="portfolio-entry" data-category="cars">
+                    <a href="#">
+                        <div class="portfolio-item">
+                            <img src="https://placehold.co/160x110?text=Car" alt="Car Example">
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">Truck Build</div>
+                </div>
+                <div class="portfolio-entry" data-category="art">
+                    <a href="#">
+                        <div class="portfolio-item">
+                            <img src="https://placehold.co/160x110?text=Art" alt="Art Example">
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">Character Sketch</div>
+                </div>
+                <div class="portfolio-entry" data-category="videos">
+                    <a href="#">
+                        <div class="portfolio-item">
+                            <img src="https://placehold.co/160x110?text=Stream" alt="Stream Example">
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">Live Stream</div>
+                </div>
+            </div>
+            <div class="gallery-link">View Full Gallery</div>
+        </section>
+        <section>
+            <h2>Character</h2>
+            <div class="character-section">
+                <div class="character-img">
+                    <img src="https://placehold.co/120x120?text=Character" alt="Character" style="width:100%;height:100%;">
+                </div>
+                <div class="character-details">
+                    <h3>Name</h3>
+                    <p>Carracternum, ver sin nanito eusandewnesier.<br>
+                    Lorem ipsum dolor sit amet, consectetuer</p>
+                    <p><small>Art by [Artist]</small></p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Car Projects</h2>
+            <div class="projects-section">
+                <div class="project-card">
+                    <h3>Car Projects</h3>
+                    <p>Details about car projects go here.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Support me</h3>
+                    <p>Ways to support Torque go here.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        // Simple tab filtering
+        document.querySelectorAll('.portfolio-tabs button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.portfolio-tabs button').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('.portfolio-entry').forEach(entry => {
+                    if (filter === 'all' || entry.getAttribute('data-category') === filter) {
+                        entry.style.display = '';
+                    } else {
+                        entry.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
