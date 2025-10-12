@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Wolfey's Webpresence</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
     <style>
         body {
             background: linear-gradient(135deg, #00b7ff 0%, #1a146b 60%, #831763 100%);
@@ -307,10 +307,10 @@
                 <h1>Hey, I'm WolfeyLeon</h1>
                 <p>Call me Leon, or Wolfey. Your local mechanic</p>
                 <div class="social-icons">
-                    <a href="#" title="Twitch"><i class="fab fa-twitch"></i></a>
-                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.twitch.tv/wolfeyleon" title="Twitch"><i class="fab fa-twitch"></i></a>
+                    <a href="https://www.youtube.com/@WolfeyLeon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/wolfeyleon" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="BlueSky"><i class="fab fa-bluesky"></i></a>
                     <a href="#" title="Download"><i class="fas fa-download"></i></a>
                     <a href="https://links.wolfey.nl" title="Links"><i class="fas fa-link"></i></a>
                 </div>
@@ -341,11 +341,12 @@
         <section>
             <h2>Portfolio</h2>
             <div class="portfolio-tabs">
-                <button data-filter="all" class="active">All Content</button>
+                <button data-filter="videos-vrchat" class="active">Videos & VRChat</button>
                 <button data-filter="videos">Videos & Streams</button>
                 <button data-filter="vrchat">Worlds & Avatars</button>
                 <button data-filter="cars">Cars & Trucks</button>
                 <button data-filter="art">Character & Art</button>
+                <button data-filter="all" class="active">All</button>
             </div>
             <div class="portfolio-gallery">
                 <div class="portfolio-entry" data-category="videos">
@@ -452,7 +453,12 @@
                 this.classList.add('active');
                 const filter = this.getAttribute('data-filter');
                 document.querySelectorAll('.portfolio-entry').forEach(entry => {
-                    if (filter === 'all' || entry.getAttribute('data-category') === filter) {
+                    if (
+                        filter === 'all' ||
+                        entry.getAttribute('data-category') === filter ||
+                        (filter === 'videos-vrchat' && 
+                            (entry.getAttribute('data-category') === 'videos' || entry.getAttribute('data-category') === 'vrchat'))
+                    ) {
                         entry.style.display = '';
                     } else {
                         entry.style.display = 'none';
@@ -461,12 +467,13 @@
             });
         });
 
-        // Default to "Worlds & Avatars" tab on mobile only
+        // Set default tab based on screen size
         if (window.innerWidth <= 600) {
             var btn = document.querySelector('.portfolio-tabs button[data-filter="vrchat"]');
-            if (btn) {
-                btn.click();
-            }
+            if (btn) btn.click();
+        } else {
+            var btn = document.querySelector('.portfolio-tabs button[data-filter="videos-vrchat"]');
+            if (btn) btn.click();
         }
     </script>
 </body>
