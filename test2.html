@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Torque | Creator Portfolio</title>
+    <title>Wolfey's Webpresence</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             background: linear-gradient(135deg, #00b7ff 0%, #1a146b 60%, #831763 100%);
@@ -142,26 +143,21 @@
             width: 160px;
             min-width: 120px;
         }
-        .portfolio-item {
-            width: 100%;
-            height: 110px;
-            background: #3161a3;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+       .portfolio-item {
+                background: none;
+                box-shadow: none;
         }
         .portfolio-caption {
-            height: 16px;
-            background: #223366;
-            border-radius: 4px;
-            margin-top: 6px;
-            width: 80%;
+            background: none;
+            border-radius: 0;
+            width: 100%;
             color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.95rem;
+            text-align: center;
+            margin: 8px 0 0 0;
+            display: block;
+            font-size: 1rem;
+            box-shadow: none;
+            padding: 0;
         }
         .gallery-link {
             text-align: right;
@@ -217,9 +213,9 @@
         @media (max-width: 600px) {
             .container {
                 padding: 8px 16px;
-                margin: 16px; /* Add margin on mobile too */
+                margin: 16px;
                 border-radius: 16px;
-                background: rgba(34,51,102,0.6); /* Lower opacity for gradient visibility */
+                background: rgba(34,51,102,0.6);
             }
             header {
                 flex-direction: row;
@@ -227,7 +223,7 @@
                 gap: 16px;
             }
             .intro {
-                max-width: calc(100% - 100px); /* Leave space for avatar */
+                max-width: calc(100% - 100px);
                 min-width: 0;
                 flex: 1 1 0;
             }
@@ -243,12 +239,19 @@
             h2 {
                 font-size: 1.1rem;
             }
-            .portfolio-entry {
-                width: 100%;
-                min-width: 0;
-            }
             .portfolio-gallery {
+                flex-direction: column;
                 gap: 10px;
+                align-items: center; /* Center thumbnails only on mobile */
+            }
+            .portfolio-entry {
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 320px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center each entry's content */
             }
             .about-img, .character-img, .avatar {
                 width: 80px;
@@ -258,6 +261,42 @@
                 padding: 10px;
                 min-height: 80px;
             }
+            .portfolio-item {
+                background: none;
+                box-shadow: none;
+            }
+            .portfolio-caption {
+                background: none;
+                border-radius: 0;
+                width: 100%;
+                color: #fff;
+                text-align: center;
+                margin: 8px 0 0 0;
+                display: block;
+                font-size: 1rem;
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+        @media (max-width: 600px) {
+    .about-img {
+        display: none;
+    }
+}
+        .site-footer {
+            margin-top: 32px;
+            padding: 18px 0 0 0;
+            text-align: center;
+            font-size: 1rem;
+            color: #fff;
+        }
+        .site-footer a {
+            color: #b0c4de;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -265,34 +304,36 @@
     <div class="container">
         <header>
             <div class="intro">
-                <h1>Hey, I'm Torque</h1>
-                <p>a content creator who mixes cars, trucks & furry creativity.</p>
+                <h1>Hey, I'm WolfeyLeon</h1>
+                <p>Call me Leon, or Wolfey. Your local mechanic</p>
                 <div class="social-icons">
-                    <a href="#" title="Twitch">🎮</a>
-                    <a href="#" title="YouTube">▶️</a>
-                    <a href="#" title="Twitter">🐦</a>
-                    <a href="#" title="Discord">💬</a>
-                    <a href="#" title="Download">⬇️</a>
-                    <a href="#" title="Other">⚙️</a>
+                    <a href="#" title="Twitch"><i class="fab fa-twitch"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="#" title="Download"><i class="fas fa-download"></i></a>
+                    <a href="https://links.wolfey.nl" title="Links"><i class="fas fa-link"></i></a>
                 </div>
             </div>
             <div class="avatar">
                 <!-- Replace with actual avatar image -->
-                <img src="https://placehold.co/140x140?text=Avatar" alt="Torque Avatar" style="width:100%;height:100%;">
+                <img src="media/avatar.png" alt="Wolfey's Avatar" style="width:100%;height:100%;">
             </div>
         </header>
         <section>
             <h2>About Me</h2>
             <div class="about">
                 <div class="about-img">
-                    <img src="https://placehold.co/120x120?text=Photo" alt="About Me" style="width:100%;height:100%;">
+                    <img src="media/fish.png" alt="About Me" style="width:100%;height:100%;">
                 </div>
                 <div class="about-details">
-                    <p>Lorem ayaone breau enfives we js-servids<br>
-                    Pettem orcita maoehvn otso dit torhstirty quastolicvanto vjoch, exrik oragehahit patisnoes neci du avusumta znrd. ptram.dikolok.</p>
+                    <p>23 Year old guy, i sometimes (very rarely) stream on Twitch<br>
+                    Very much a car guy, VRChat content "creator" and avid sim trucker<br>
+                    I work as a mechanic, and do silly stuff with computers as hobby<br>
+                    Im NOT a furry, trust me bro.</p>
                     <ul>
-                        <li>🚗 <b>Favorite car:</b> Nissan Skyline GT R R34</li>
-                        <li>🦊 <b>Character:</b> [Name]</li>
+                        <li>🚗 <b>Favorite car:</b> I Forgor 💀💀💀</li>
+                        <li>🐺 <b>Character:</b> WolfeyLeon</li>
                     </ul>
                 </div>
             </div>
@@ -300,8 +341,10 @@
         <section>
             <h2>Portfolio</h2>
             <div class="portfolio-tabs">
-                <button data-filter="all" class="active">Videos & Streams</button>
-                <button data-filter="cars">Cans & Trucks</button>
+                <button data-filter="all" class="active">All Content</button>
+                <button data-filter="videos">Videos & Streams</button>
+                <button data-filter="vrchat">Worlds & Avatars</button>
+                <button data-filter="cars">Cars & Trucks</button>
                 <button data-filter="art">Character & Art</button>
             </div>
             <div class="portfolio-gallery">
@@ -320,6 +363,14 @@
                         </div>
                     </a>
                     <div class="portfolio-caption">Truck Build</div>
+                </div>                
+                <div class="portfolio-entry" data-category="cars">
+                    <a href="#">
+                        <div class="portfolio-item">
+                            <img src="https://placehold.co/160x110?text=WoT" alt="WoT Profile">
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">World of Trucks</div>
                 </div>
                 <div class="portfolio-entry" data-category="art">
                     <a href="#">
@@ -367,6 +418,13 @@
                 </div>
             </div>
         </section>
+        <footer class="site-footer">
+            <div class="footer-content">
+                &copy; 2025 WolfeyLeon &mdash; All rights reserved.<br>
+                <a href="mailto:contact@wolfeyleon.com">Contact</a> | 
+                <a href="https://links.wolfey.nl">Links</a>
+            </div>
+        </footer>
     </div>
     <script>
         // Simple tab filtering
