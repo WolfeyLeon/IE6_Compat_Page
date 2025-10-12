@@ -379,7 +379,25 @@
                         </div>
                     </a>
                     <div class="portfolio-caption">Character Sketch</div>
+
                 </div>
+                                <div class="portfolio-entry" data-category="vrchat">
+                    <a href="#">
+                        <div class="portfolio-item">
+                            <img src="https://placehold.co/160x110?text=VRC World" alt="World Example">
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">World placeholder</div>
+                </div>
+                    <div class="portfolio-entry" data-category="vrchat">
+                    <a href="#">
+                        <div class="portfolio-item">
+                            <img src="https://placehold.co/160x110?text=VRC Avi" alt="Avi Example">
+                        </div>
+                    </a>
+                    <div class="portfolio-caption">Avi placeholder</div>
+                </div>
+
                 <div class="portfolio-entry" data-category="videos">
                     <a href="#">
                         <div class="portfolio-item">
@@ -442,6 +460,14 @@
                 });
             });
         });
+
+        // Default to "Worlds & Avatars" tab on mobile only
+        if (window.innerWidth <= 600) {
+            var btn = document.querySelector('.portfolio-tabs button[data-filter="vrchat"]');
+            if (btn) {
+                btn.click();
+            }
+        }
     </script>
 </body>
 </html>
